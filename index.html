@@ -5,18 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Gains and Tastes</title>
         <style>
+            /*General*/
             body{
                 background-color: rgb(37, 37, 37);
-                width: 80%;
+                width: 60%;
                 text-align: center;
                 margin: auto;
-
-            }
-            h1{
-                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-                text-align: center;
-                color: rgb(37, 37, 37);
-                padding: 10px;
             }
             header, #menu, #order-form, #contact-form, footer{
                 background-color: white;
@@ -26,7 +20,31 @@
                 padding: 10px;
             }
             header:hover, #menu:hover, #order-form:hover, #contact-form:hover, footer:hover{
-                background-color: rgb(249, 230, 207)
+                background-color: rgb(249, 230, 207);
+            }
+            a{
+                font-size: 150%;
+                color: rgb(37, 37, 37);
+            }
+            a:hover{
+                color: red;
+            }
+            /*Header*/
+            #header-top{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 20px;
+            }
+            #header-img{
+                width: 130px;
+                height: auto;
+                margin-right: 30px;
+                display: block;
+            }
+            h1{
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                color: rgb(37, 37, 37);
             }
             nav > ul{
                 display: flex;
@@ -36,35 +54,82 @@
                 text-align: center;
                 margin: auto;
             }
-            a{
-                font-size: 150%;
-                color: rgb(37, 37, 37);
+            /*Menu*/
+            .dishes{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
             }
-            a:hover{
-                color: red;
+            .dishes > img{
+                width: 200px;
+                height: 200px;
+                margin: 30px;
             }
-
-            form{
+            .dishes > p{
+                max-width: 50%;
+                font-size: large;
+            }
+            /*Order form*/
+            #input-form {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            .product-card{
+                border: 2px solid rgb(37, 37, 37);
+                padding: 10px;
+                border-radius: 10px;
+                margin: 5px;
+                width: auto;
+                height: 150px;
+                box-sizing: border-box;
+            }
+            .product-card > input{
+                width: auto;
+                border: 1px solid rgb(37, 37, 37);
+                border-radius: 5px
+            }
+            .product-card > input > label{
+                font-size: large;
+            }
+            #below-input{
+                margin-left: 10px;
+                font-size: large;
+            }
+            #special-request{
+                width: 300px;
+                border: 1px solid rgb(37, 37, 37);
+                border-radius: 5px
+            }
+            #checkout{
+                font-size: large;
+            }
+            /*Contact form*/
+            #contact-form>form{
                 text-align: left;
                 font-size: 1.3em;
             }
-            input, textarea{
+            .contact-input, #contact-comment{
                 margin: 13px;
                 padding: 10px;
                 border: 1px solid rgb(37, 37, 37);
                 border-radius: 5px;
             }
+            #contact-comment{
+                width: 310px;
+            }
             #submit{
-                margin-left: 45%;
-                margin-right: 40%;
                 font-size: large;
-                padding-left: 40px;
-                padding-right: 40px;
+                padding: 5px 40px;
+                border: 1px solid rgb(37, 37, 37);
+                border-radius: 5px;
+                display: block;
+                margin: 10px auto;
             }
-            #submit:hover, input:hover, textarea:hover{
+            #submit:hover, .contact-input:hover, #contact-comment:hover, #special-request:hover, #checkout:hover, .product-card > input:hover{
                 background-color: rgb(225, 225, 225);
-                
             }
+            /*Footer*/
             footer > p > a{
                 font-size: 1em;
                 color: red;
@@ -72,9 +137,12 @@
         </style>
     </head>
     <body>
+        <!--Header-->
         <header>
-            <img id="header-img" src="header.jpg" alt="Restaurant Logo">
-            <h1>G&T</h1>
+            <div id="header-top">
+                <img id="header-img" src="G&T_Logo.png" alt="Restaurant Logo">
+                <h1>Gains and Tastes</h1>
+            </div>
             <nav>
                 <ul>
                     <li><a href="#menu">Menu</a></li>
@@ -83,29 +151,192 @@
                 </ul>
             </nav>
         </header>
+        <!--Main-->
         <main>
-            <div id="menu">
+            <!--Menu-->
+            <section id="menu">
                 <h2>Menu</h2>
-                <div id="rows">
-
-                </div>
-            </div>
-            <div id="order-form">
+                <article>
+                    <h3>Grilled chicken</h3>
+                    <div class="dishes">
+                        <p><b>Nutrition Facts: </b><br>(420 kcal) (46g protein) (10g fats) (39g carb)<br>
+                        <b>Description: </b><br>Juicy grilled chicken served with perfectly roasted veggies and golden crispy potatoes.<br>
+                        <b>Price: </b><br><i>7.00$</i>
+                        </p>
+                        <img src="dish1.jpeg" alt="Grilled chicken dish">
+                    </div>
+                </article>
+                <br>
+                <article>
+                    <h3>Teriyaki Chicken Rice Bowl</h3>
+                    <div class="dishes">
+                        <p><b>Nutrition Facts: </b><br>(510 kcal) (40g protein) (12g fats) (45g carbs)<br>
+                        <b>Description: </b><br>Tender teriyaki-marinated chicken over fluffy rice and fresh veggies.<br>
+                        <b>Price: </b><br><i>$6.50</i></p>
+                        </p>
+                        <img src="dish2.jpeg" alt="Teriyaki Chicken Rice Bowl dish">
+                    </div>
+                </article>
+                <br>
+                <article>
+                    <h3>Teriyaki Beef Rice Bowl</h3>
+                    <div class="dishes">
+                        <p><b>Nutrition Facts: </b><br>(580 kcal) (42g protein) (18g fats) (47g carbs)<br>
+                        <b>Description: </b><br>Juicy beef strips glazed in teriyaki sauce, served over steaming rice and crunchy vegetables.<br>
+                        <b>Price: </b><br><i>$7.50</i></p>
+                        </p>
+                        <img src="dish3.jpeg" alt="Teriyaki Beef Rice Bowl dish">
+                    </div>
+                </article>
+                <br>
+                <article>
+                    <h3>Ribeye Steak</h3>
+                    <div class="dishes">
+                        <p><b>Nutrition Facts: </b><br>(630 kcal) (52g protein) (28g fats) (25g carbs)<br>
+                        <b>Description: </b><br>Succulent ribeye grilled to perfection with a side of herb potatoes and green beans.<br>
+                        <b>Price: </b><br><i>$9.00</i></p>
+                        </p>
+                        <img src="dish4.jpeg" alt="Ribeye Steak dish">
+                    </div>
+                </article>
+                <br>
+                <article>
+                    <h3>Lemon Butter Salmon</h3>
+                    <div class="dishes">
+                        <p><b>Nutrition Facts: </b><br>(490 kcal) (38g protein) (16g fats) (34g carbs)<br>
+                        <b>Description: </b><br>Fresh salmon fillet drizzled with lemon butter sauce and served with asparagus and rice.<br>
+                        <b>Price: </b><br><i>$8.00</i></p>
+                        </p>
+                        <img src="dish5.jpeg" alt="Lemon Butter Salmon dish">
+                    </div>
+                </article>
+                <br>
+                <article>
+                    <h3>Oven Grilled Fish</h3>
+                    <div class="dishes">
+                        <p><b>Nutrition Facts: </b><br>(460 kcal) (44g protein) (11g fats) (33g carbs)<br>
+                        <b>Description: </b><br>Delicately grilled white fish seasoned with herbs and served with quinoa and sautéed vegetables.<br>
+                        <b>Price: </b><br><i>$6.75</i></p>
+                        </p>
+                        <img src="dish6.jpeg" alt="Oven Grilled Fish dish">
+                    </div>
+                </article>
+            </section>
+            <!--Place an order-->
+            <section id="order-form">
                 <h2>Place an order</h2>
-            </div>
-            <div id="contact-form">
+                <form id="input-form">
+                    <div class="product-card">
+                        <h3>Grilled Chicken</h3>
+                        <label>Quantity: </label><input type="number" min="0" placeholder="">
+                        <br><label><b>Side 1: </b></label>
+                        <input type="radio" name="side1a">Fries
+                        <input type="radio" name="side1a">Sweet Corn
+                        <input type="radio" name="side1a">Sautéed Veggies
+                        <input type="radio" name="side1a">White Rice
+                        <br><label><b>Side 2: </b></label>
+                        <input type="radio" name="side2a">Fries
+                        <input type="radio" name="side2a">Sweet Corn
+                        <input type="radio" name="side2a">Sautéed Veggies
+                        <input type="radio" name="side2a">White Rice
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Teriyaki Chicken Rice Bowl</h3>
+                        <label>Quantity: </label><input type="number" min="0" placeholder="">
+                        <br><label><b>Side 1: </b></label>
+                        <input type="radio" name="side1b">Fries
+                        <input type="radio" name="side1b">Sweet Corn
+                        <input type="radio" name="side1b">Sautéed Veggies
+                        <input type="radio" name="side1b">White Rice
+                        <br><label><b>Side 2: </b></label>
+                        <input type="radio" name="side2b">Fries
+                        <input type="radio" name="side2b">Sweet Corn
+                        <input type="radio" name="side2b">Sautéed Veggies
+                        <input type="radio" name="side2b">White Rice
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Teriyaki Beef Rice Bowl</h3>
+                        <label>Quantity: </label><input type="number" min="0" placeholder="">
+                        <br><label><b>Side 1: </b></label>
+                        <input type="radio" name="side1c">Fries
+                        <input type="radio" name="side1c">Sweet Corn
+                        <input type="radio" name="side1c">Sautéed Veggies
+                        <input type="radio" name="side1c">White Rice
+                        <br><label><b>Side 2: </b></label>
+                        <input type="radio" name="side2c">Fries
+                        <input type="radio" name="side2c">Sweet Corn
+                        <input type="radio" name="side2c">Sautéed Veggies
+                        <input type="radio" name="side2c">White Rice
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Ribeye Steak</h3>
+                        <label>Quantity: </label><input type="number" min="0" placeholder="">
+                        <br><label><b>Side 1: </b></label>
+                        <input type="radio" name="side1d">Fries
+                        <input type="radio" name="side1d">Sweet Corn
+                        <input type="radio" name="side1d">Sautéed Veggies
+                        <input type="radio" name="side1d">White Rice
+                        <br><label><b>Side 2: </b></label>
+                        <input type="radio" name="side2d">Fries
+                        <input type="radio" name="side2d">Sweet Corn
+                        <input type="radio" name="side2d">Sautéed Veggies
+                        <input type="radio" name="side2d">White Rice
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Lemon Butter Salmon</h3>
+                        <label>Quantity: </label><input type="number" min="0" placeholder="">
+                        <br><label><b>Side 1: </b></label>
+                        <input type="radio" name="side1e">Fries
+                        <input type="radio" name="side1e">Sweet Corn
+                        <input type="radio" name="side1e">Sautéed Veggies
+                        <input type="radio" name="side1e">White Rice
+                        <br><label><b>Side 2: </b></label>
+                        <input type="radio" name="side2e">Fries
+                        <input type="radio" name="side2e">Sweet Corn
+                        <input type="radio" name="side2e">Sautéed Veggies
+                        <input type="radio" name="side2e">White Rice
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Oven Grilled Fish</h3>
+                        <label>Quantity: </label><input type="number" min="0" placeholder="">
+                        <br><label><b>Side 1: </b></label>
+                        <input type="radio" name="side1f">Fries
+                        <input type="radio" name="side1f">Sweet Corn
+                        <input type="radio" name="side1f">Sautéed Veggies
+                        <input type="radio" name="side1f">White Rice
+                        <br><label><b>Side 2: </b></label>
+                        <input type="radio" name="side2f">Fries
+                        <input type="radio" name="side2f">Sweet Corn
+                        <input type="radio" name="side2f">Sautéed Veggies
+                        <input type="radio" name="side2f">White Rice
+                    </div>
+
+                    <div style="width: 100%;" id="below-input">
+                        <label><b>Special requests: </b></label><br><textarea id="special-request" placeholder="Enter your special request here"></textarea>
+                        <br><input type="submit" value="Checkout" id="checkout">
+                    </div>
+                </form>
+            </section>
+            <!--Contact us form-->
+            <section id="contact-form">
                 <h2>Contact us</h2>
                 <form>
-                    <label for="full-name">Full Name: </label><br><input type="text" name="full-name" id="full-name" placeholder="Name" required><br>
-                    <label for="full-name">Email: </label><br><input type="text" name="email" id="email" placeholder="Email" required><br>
-                    <label for="full-name">Phone Number: </label><br><input type="number" name="phone-number" id="phone-number" placeholder="Phone Number [optional]"><br>
-                    <label for="comment">Comments: </label><br><textarea name="comment" id="comment" placeholder="Add your comment (from 10 to 500 letters)" required></textarea><br>
+                    <label>Full Name: </label><br><input type="text" placeholder="Name" class="contact-input" required><br>
+                    <label>Email: </label><br><input type="text" placeholder="Email" class="contact-input" required><br>
+                    <label>Phone Number: </label><br><input type="number" placeholder="Phone Number [optional]" class="contact-input"><br>
+                    <label>Comments: </label><br><textarea id="contact-comment" placeholder="Add your comment (from 10 to 500 letters)" required></textarea><br>
                     <input type="submit" id="submit" value="send" min="10" max="500">
                 </form>
-            </div>
+            </section>
         </main>
+        <!--Footer-->
         <footer>
-            <p>Made with love by <b>3amojoe</b> ❤️ <br> Stay tuned for more at <a href="https://www.codedex.io/@3amojoe">my profile</a></p>
+            <p>Made with love by <b>3amojoe</b> ❤️ <br> Stay tuned for more at <a href="https://www.codedex.io/@3amojoe" target="_blank">my profile</a></p>
         </footer>
     </body>
 </html>
